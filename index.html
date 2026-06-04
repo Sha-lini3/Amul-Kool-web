@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amul Kool - Chill. Refresh. Recharge.</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="preloader-content">
+        <h1 class="preloader-title">AMUL KOOL</h1>
+        <div class="loader-track">
+          <div id="loader-bar"></div>
+        </div>
+        <p class="preloader-status">Chilling the bottles...</p>
+        <span id="preload-percentage">0%</span>
+      </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="glass-header">
+      <div class="logo">AMUL <span class="logo-accent">KOOL</span></div>
+      <nav class="nav-links">
+        <a href="#section-hero">Home</a>
+        <a href="#section-details">Goodness</a>
+        <a href="#section-features">Vibe</a>
+        <a href="#section-flavors">Flavors</a>
+      </nav>
+      <a href="#" class="btn-buy-now" id="btn-buy-header">Get Chilled</a>
+    </header>
+
+    <!-- Canvas Wrapper (Fixed Background Scroll Animation) -->
+    <div id="canvas-container">
+      <canvas id="animation-canvas"></canvas>
+      <div class="gradient-overlay"></div>
+    </div>
+
+    <!-- Scrollable Overlay Content -->
+    <main id="scroll-container">
+      <!-- Hero Section -->
+      <section id="section-hero" class="scroll-section active-in-view">
+        <div class="hero-content">
+          <h2 class="hero-title">SHAKE UP<br>YOUR DAY.</h2>
+          <p class="hero-subtitle">The ultimate, refreshing milk treat packed with nutrients and delicious flavor. Served chilled, styled for you.</p>
+          <div class="scroll-indicator">
+            <span class="scroll-text">Scroll to Unbottle</span>
+            <div class="chevron-down">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Details Section (Goodness) -->
+      <section id="section-details" class="scroll-section">
+        <div class="floating-panel panel-left glass-panel">
+          <div class="panel-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 7H13V9H11V7ZM11 11H13V17H11V11Z" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>100% Pure Milk</h3>
+          <p>Crafted with rich, standardized milk sourced directly from local dairies. Every drop gives you high-quality proteins, calcium, and essential vitamins to fuel your active lifestyle.</p>
+          <ul class="benefit-list">
+            <li><span>✓</span> Rich in Calcium</li>
+            <li><span>✓</span> Protein Packed</li>
+            <li><span>✓</span> Energy Booster</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Features Section (Vibe) -->
+      <section id="section-features" class="scroll-section">
+        <div class="floating-panel panel-right glass-panel">
+          <div class="panel-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 10V3L4 14H11V21L20 10H13Z" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Instant Recharge</h3>
+          <p>Whether you're hitting the gym, cramming for exams, or cooling down after a long day in the sun, Amul Kool resets your vibe instantly. Keep it cool, drink it iced, stay unstoppable.</p>
+          <div class="stat-badge">
+            <span class="stat-num">0%</span>
+            <span class="stat-lbl">Compromise</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flavors Section -->
+      <section id="section-flavors" class="scroll-section">
+        <div class="flavor-selector-container">
+          <h2 class="flavor-title">EXPLORE THE FLAVORS</h2>
+          <p class="flavor-desc">Tap a bottle to swap flavors. Experience the taste spectrum of Amul Kool.</p>
+          
+          <div class="flavor-grid">
+            <!-- Kesar Badam -->
+            <button class="flavor-card active" id="flavor-kesar" data-theme="kesar">
+              <div class="card-glow"></div>
+              <div class="card-inner">
+                <span class="flavor-tag">Royal</span>
+                <h4>Kesar Badam</h4>
+                <p>Pure saffron threads with crushed premium almonds.</p>
+              </div>
+            </button>
+
+            <!-- Rose -->
+            <button class="flavor-card" id="flavor-rose" data-theme="rose">
+              <div class="card-glow"></div>
+              <div class="card-inner">
+                <span class="flavor-tag">Sweet</span>
+                <h4>Velvet Rose</h4>
+                <p>Delicate rose petals blended with creaminess.</p>
+              </div>
+            </button>
+
+            <!-- Cafe -->
+            <button class="flavor-card" id="flavor-rose" data-theme="cafe">
+              <div class="card-glow"></div>
+              <div class="card-inner">
+                <span class="flavor-tag">Bold</span>
+                <h4>Rich Cafe</h4>
+                <p>Smooth, roasted dark coffee beans for an instant lift.</p>
+              </div>
+            </button>
+
+            <!-- Elaichi -->
+            <button class="flavor-card" id="flavor-elaichi" data-theme="elaichi">
+              <div class="card-glow"></div>
+              <div class="card-inner">
+                <span class="flavor-tag">Classic</span>
+                <h4>Elaichi Fresh</h4>
+                <p>Traditional green cardamom pods for a subtle refresh.</p>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section id="section-cta" class="scroll-section">
+        <div class="cta-card glass-panel">
+          <h2>NEVER LOSE YOUR COOL</h2>
+          <p>Get your favorite flavor delivered to your doorstep, or find it at a retail shop near you.</p>
+          <div class="cta-actions">
+            <a href="#" class="btn-primary" id="btn-order-cta">Order Online</a>
+            <a href="#section-flavors" class="btn-secondary">Explore Again</a>
+          </div>
+          <footer class="site-footer">
+            <p>&copy; 2026 Amul India. Created with Passion.</p>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <!-- Checkout & Payment Modal -->
+    <div id="checkout-modal" class="modal-overlay">
+      <div class="modal-window glass-panel">
+        <button id="modal-close" class="modal-close-btn">&times;</button>
+        
+        <!-- Step 1: Order Details & Shipping -->
+        <div class="modal-step active" id="step-order">
+          <h2 class="modal-heading">Order Checkout</h2>
+          <div class="checkout-grid">
+            <!-- Product preview card -->
+            <div class="product-summary-card">
+              <div class="bottle-preview-container">
+                <span class="badge-price">₹40 / bottle</span>
+                <div class="checkout-bottle-glow"></div>
+                <div class="checkout-bottle-flavor" id="checkout-flavor-indicator">Kesar Badam</div>
+              </div>
+              <div class="quantity-picker">
+                <button type="button" class="btn-qty" id="qty-minus">-</button>
+                <span id="qty-value">1</span>
+                <button type="button" class="btn-qty" id="qty-plus">+</button>
+              </div>
+              <div class="total-display">
+                <span>Total Amount:</span>
+                <span id="checkout-total-price">₹40</span>
+              </div>
+            </div>
+
+            <!-- Shipping form -->
+            <form class="checkout-form" id="shipping-form">
+              <h3>Shipping Information</h3>
+              <div class="input-group">
+                <label for="ship-name">Full Name</label>
+                <input type="text" id="ship-name" placeholder="John Doe" required>
+              </div>
+              <div class="input-group">
+                <label for="ship-email">Email Address</label>
+                <input type="email" id="ship-email" placeholder="john@example.com" required>
+              </div>
+              <div class="input-row">
+                <div class="input-group">
+                  <label for="ship-phone">Phone</label>
+                  <input type="tel" id="ship-phone" placeholder="9876543210" required>
+                </div>
+                <div class="input-group">
+                  <label for="ship-pincode">Pincode</label>
+                  <input type="text" id="ship-pincode" placeholder="400001" required>
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="ship-address">Delivery Address</label>
+                <textarea id="ship-address" rows="2" placeholder="Street, Building, Flat No." required></textarea>
+              </div>
+              <button type="submit" class="btn-modal-next">Proceed to Payment</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Step 2: Payment Details -->
+        <div class="modal-step" id="step-payment">
+          <h2 class="modal-heading">Secure Payment</h2>
+          <p class="payment-sub">Select your preferred payment option below.</p>
+          
+          <div class="payment-tabs">
+            <button class="payment-tab-btn active" id="tab-btn-card">Credit / Debit Card</button>
+            <button class="payment-tab-btn" id="tab-btn-upi">UPI Scan QR</button>
+          </div>
+
+          <!-- Card Payment Section -->
+          <div class="payment-content active" id="payment-card-panel">
+            <div class="payment-layout">
+              <!-- Live 3D Credit Card Mockup -->
+              <div class="card-3d-wrapper">
+                <div class="credit-card-mock" id="credit-card-element">
+                  <!-- Front Side -->
+                  <div class="card-side card-front">
+                    <div class="card-chip"></div>
+                    <div class="card-logo" id="card-brand-logo">VISA</div>
+                    <div class="card-number-display" id="card-num-view">•••• •••• •••• ••••</div>
+                    <div class="card-footer-info">
+                      <div class="card-holder-box">
+                        <span class="card-lbl">Card Holder</span>
+                        <span class="card-val" id="card-name-view">JOHN DOE</span>
+                      </div>
+                      <div class="card-expiry-box">
+                        <span class="card-lbl">Expires</span>
+                        <span class="card-val" id="card-expiry-view">MM/YY</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Back Side -->
+                  <div class="card-side card-back">
+                    <div class="card-mag-strip"></div>
+                    <div class="card-signature-box">
+                      <span class="card-sig-line"></span>
+                      <span class="card-cvv-val" id="card-cvv-view">•••</span>
+                    </div>
+                    <p class="card-disclaimer">Authorized signature required. Mock payment for Amul Kool demo.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card form inputs -->
+              <form class="checkout-form" id="card-form">
+                <div class="input-group">
+                  <label for="card-number">Card Number</label>
+                  <input type="text" id="card-number" placeholder="4111 2222 3333 4444" maxlength="19" required>
+                </div>
+                <div class="input-group">
+                  <label for="card-name">Cardholder Name</label>
+                  <input type="text" id="card-name" placeholder="John Doe" required>
+                </div>
+                <div class="input-row">
+                  <div class="input-group">
+                    <label for="card-expiry">Expiry Date</label>
+                    <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" required>
+                  </div>
+                  <div class="input-group">
+                    <label for="card-cvv">CVV</label>
+                    <input type="password" id="card-cvv" placeholder="•••" maxlength="3" required>
+                  </div>
+                </div>
+                <div class="btn-row">
+                  <button type="button" class="btn-modal-prev" id="btn-back-to-shipping">Back</button>
+                  <button type="submit" class="btn-modal-pay" id="btn-pay-card">Pay Now</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- UPI QR Section -->
+          <div class="payment-content" id="payment-upi-panel">
+            <div class="upi-layout">
+              <div class="qr-code-wrapper">
+                <div class="qr-code-border">
+                  <svg class="qr-svg" width="160" height="160" viewBox="0 0 100 100" fill="currentColor">
+                    <rect x="0" y="0" width="30" height="30"/>
+                    <rect x="5" y="5" width="20" height="20" fill="white"/>
+                    <rect x="10" y="10" width="10" height="10"/>
+                    <rect x="70" y="0" width="30" height="30"/>
+                    <rect x="75" y="5" width="20" height="20" fill="white"/>
+                    <rect x="80" y="10" width="10" height="10"/>
+                    <rect x="0" y="70" width="30" height="30"/>
+                    <rect x="5" y="75" width="20" height="20" fill="white"/>
+                    <rect x="10" y="80" width="10" height="10"/>
+                    <rect x="40" y="5" width="10" height="10"/>
+                    <rect x="55" y="15" width="10" height="5"/>
+                    <rect x="35" y="25" width="15" height="15"/>
+                    <rect x="75" y="40" width="20" height="10"/>
+                    <rect x="45" y="45" width="10" height="15"/>
+                    <rect x="40" y="75" width="15" height="10"/>
+                    <rect x="65" y="65" width="10" height="15"/>
+                    <rect x="80" y="80" width="15" height="15"/>
+                  </svg>
+                  <div class="qr-scan-line"></div>
+                </div>
+                <div class="qr-timer">Expires in: <span id="upi-timer">02:00</span></div>
+              </div>
+              <div class="upi-instructions">
+                <p>Scan the QR code with GPay, PhonePe, Paytm, or any UPI app to complete payment.</p>
+                <div class="upi-logos">
+                  <span>BHIM</span> • <span>GPay</span> • <span>PhonePe</span> • <span>Paytm</span>
+                </div>
+                <div class="btn-row justify-center mt-6">
+                  <button type="button" class="btn-modal-prev" id="btn-back-to-shipping-upi">Back</button>
+                  <button type="button" class="btn-modal-pay" id="btn-confirm-upi-pay">Simulate Scan & Pay</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Success Screen -->
+        <div class="modal-step" id="step-success">
+          <div class="success-content">
+            <div class="checkmark-wrapper">
+              <svg class="checkmark-svg" viewBox="0 0 52 52">
+                <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+              </svg>
+            </div>
+            <h2 class="success-heading">Order Placed Chilled!</h2>
+            <p class="success-text">Your payment was successful. Our delivery agent is already packing your chilled bottle(s) of Amul Kool.</p>
+            
+            <div class="receipt-card">
+              <div class="receipt-row">
+                <span class="receipt-lbl">Order ID</span>
+                <span class="receipt-val" id="receipt-order-id">#AK-28394</span>
+              </div>
+              <div class="receipt-row">
+                <span class="receipt-lbl">Flavor</span>
+                <span class="receipt-val" id="receipt-flavor">Kesar Badam</span>
+              </div>
+              <div class="receipt-row">
+                <span class="receipt-lbl">Quantity</span>
+                <span class="receipt-val" id="receipt-qty">1 Bottle</span>
+              </div>
+              <div class="receipt-row">
+                <span class="receipt-lbl">Total Paid</span>
+                <span class="receipt-val text-accent" id="receipt-total">₹40</span>
+              </div>
+              <div class="receipt-row border-t mt-4 pt-4">
+                <span class="receipt-lbl">Est. Delivery</span>
+                <span class="receipt-val font-bold text-green">30 Minutes</span>
+              </div>
+            </div>
+
+            <button type="button" class="btn-success-close" id="btn-finish-checkout">Back to Home</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
